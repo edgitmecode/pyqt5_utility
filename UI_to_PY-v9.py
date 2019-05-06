@@ -220,18 +220,18 @@ generated from reading ui file 'D:/Python/Scripts/UI_to_PY-v5.ui
         combine = bin(status3) + bin(status2) + bin(status) 
         spin_value = self.spinBox_indent.value()
         str_spinvalue = str(spin_value)
-        edit_txt = self.lineEdit_Py_file_name.text()
+        line_edit_txt = self.lineEdit_Py_file_name.text()
         overwrite_y_n = QMessageBox.No
-        exists = os.path.isfile(edit_txt) #returns true if edit_txt is present
+        exists = os.path.isfile(line_edit_txt) #returns true if line_edit_txt is present
 
         cmdStr = {'0b00b00b0' : 'pyuic5 ' + self.fileName + ' -i ' + str_spinvalue , \
                   '0b00b00b1' : 'pyuic5 -d -i ' + str_spinvalue +' ' + self.fileName , \
                   '0b00b10b0' : 'pyuic5 -x -i ' + str_spinvalue +' ' + self.fileName, \
                   '0b00b10b1' : 'pyuic5 -x -d -i ' + str_spinvalue +' ' + self.fileName, \
-                  '0b10b00b0' : 'pyuic5 -i ' + str_spinvalue +' ' + self.fileName + ' -o ' + edit_txt, \
-                  '0b10b00b1' : 'pyuic5 -d -i ' + str_spinvalue +' ' + self.fileName + ' -o ' + edit_txt, \
-                  '0b10b10b0' : 'pyuic5 -x -i ' + str_spinvalue +' ' + self.fileName+ ' -o ' + edit_txt, \
-                  '0b10b10b1' : 'pyuic5 -d -x -i ' + str_spinvalue +' ' + self.fileName+ ' -o ' + edit_txt, \
+                  '0b10b00b0' : 'pyuic5 -i ' + str_spinvalue +' ' + self.fileName + ' -o ' + line_edit_txt, \
+                  '0b10b00b1' : 'pyuic5 -d -i ' + str_spinvalue +' ' + self.fileName + ' -o ' + line_edit_txt, \
+                  '0b10b10b0' : 'pyuic5 -x -i ' + str_spinvalue +' ' + self.fileName+ ' -o ' + line_edit_txt, \
+                  '0b10b10b1' : 'pyuic5 -d -x -i ' + str_spinvalue +' ' + self.fileName+ ' -o ' + line_edit_txt, \
                   }
         cmdStr2 = cmdStr[combine] # get dictionary command string defined by user selection
         # If out to file selected --------------------
@@ -239,7 +239,7 @@ generated from reading ui file 'D:/Python/Scripts/UI_to_PY-v5.ui
         # else if file is present -----------------
            if exists == False : # is file present? If true ask permission to overwrite
                  output2 = subprocess.getoutput(cmdStr2) # write command string - write file 
-                 self.plainTextEdit.insertPlainText( "\n" + "Created file : " + edit_txt )
+                 self.plainTextEdit.insertPlainText( "\n" + "Created file : " + line_edit_txt )
            else :  
                  overwrite_y_n = QMessageBox.question(self,'File Overwrite', "File exist Overwrite ? ", QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
                  if overwrite_y_n == QMessageBox.Yes :
@@ -274,7 +274,6 @@ generated from reading ui file 'D:/Python/Scripts/UI_to_PY-v5.ui
         self.pushButton.setText(_translate("Main_window", "Clear"))
        
         # ----------------------------------------------------
-
 
 
 if __name__ == "__main__":
