@@ -275,12 +275,10 @@ generated from reading ui file 'D:/Python/Scripts/UI_to_PY-v5.ui
        
         # ----------------------------------------------------
 
-class donothing():
-  """ class donothing"""
-  pass  
+
 
 if __name__ == "__main__":
-    # print(help(donothing))
+
     print(Ui_Main_window.__doc__)
     #print(QtWidgets.QDialog.__doc__)
     app = QtWidgets.QApplication(sys.argv)
