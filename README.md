@@ -1,2 +1,2 @@
 # pyqt5_utility
-A GUI version of utility to convert PyQT5 designer .ui code to python .py code.
+A GUI version of PYUIC5 utility to convert PyQT5 designer .ui code to python .py code.
