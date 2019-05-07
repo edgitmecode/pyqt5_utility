@@ -6,7 +6,8 @@
 #
 # WARNING! All changes made in this file will be lost!
 # Code purpose : A GUI version of utility to convert PyQT5 designer .ui code to 
-#                python .py code.   
+#                python .py code.
+# adding comments for git commit and push test 5/7/2019
 
 from PyQt5 import QtCore, QtGui, QtWidgets 
 from PyQt5.QtWidgets import QMessageBox, QWidget
